@@ -1,1 +1,7 @@
 <h1>{{title}}</h1>
+
+<ul>
+   <li *ngFor="let seriesItem of series">
+        {{seriesItem.seriesId}} - {{seriesItem.title}}
+</li> 
+</ul>
