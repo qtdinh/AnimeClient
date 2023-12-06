@@ -1,0 +1,22 @@
+<h1 id="tableLabel">Series</h1>
+
+<p *ngIf="!series?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="series.length">
+    <thead>
+      <tr>
+        <th>SeriesID</th>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let seriesItem of series">
+        <td>{{ seriesItem.seriesId }}</td>
+        <td>{{ seriesItem.title }}</td>
+        <td>{{ seriesItem.genre }}</td>
+        <td>{{ seriesItem.year }}</td>
+      </tr>
+    </tbody>
+  </table>
