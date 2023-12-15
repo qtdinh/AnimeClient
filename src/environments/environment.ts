@@ -1,3 +1,3 @@
 export const environment = {
-    baseUrl: "boombayah" //serverAPI
+    baseUrl: "https://localhost:5001"
 };
