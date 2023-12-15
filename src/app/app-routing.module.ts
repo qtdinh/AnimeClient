@@ -6,6 +6,7 @@ import { SeriesComponent } from './series/series.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'series', component: SeriesComponent },
+  
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

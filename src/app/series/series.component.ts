@@ -12,7 +12,7 @@ export class SeriesComponent {
   series: SeriesItem[] = [];
 
     constructor(http: HttpClient) {
-      http.get<SeriesItem[]>(environment.baseUrl + "/api/Series").subscribe({
+      http.get<SeriesItem[]>(environment.baseUrl + "/api/series").subscribe({
         next: result => {
           this.series = result;
         },

@@ -7,16 +7,22 @@
       <tr>
         <th>SeriesID</th>
         <th>Title</th>
-        <th>Genre</th>
         <th>Year</th>
+        <th>Demographic</th>
+        <th>Genre</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let seriesItem of series">
+      <tr *ngFor="let seriesItem of series; let i = index" [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}">
         <td>{{ seriesItem.seriesId }}</td>
         <td>{{ seriesItem.title }}</td>
-        <td>{{ seriesItem.genre }}</td>
         <td>{{ seriesItem.year }}</td>
+        <td>{{ seriesItem.demographic }}</td>
+        <td>
+          <ul>
+              <ul *ngFor="let genre of seriesItem.genres">{{ genre }}</ul>
+          </ul>
+        </td>
       </tr>
     </tbody>
   </table>
