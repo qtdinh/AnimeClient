@@ -1,0 +1,24 @@
+<h1 id="tableLabel">Characters</h1>
+
+<p *ngIf="!characters?.length"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="characters.length">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Series</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of characters; let i = index" [ngClass]="{'even-row': i % 2 === 0, 'odd-row': i % 2 !== 0}">
+        <td>{{ character.characterId }}</td>
+        <td>{{ character.name }}</td>
+        <td>{{ character.age}}</td>
+        <td>{{ character.gender }}</td>
+        <td>{{ character.series }}</td>
+      </tr>
+    </tbody>
+  </table>

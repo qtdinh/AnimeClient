@@ -15,13 +15,15 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SeriesComponent } from './series/series.component';
 import { HomeComponent } from './home/home.component';
+import { CharactersComponent } from './characters/characters.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     SeriesComponent,
-    HomeComponent
+    HomeComponent,
+    CharactersComponent
   ],
   imports: [
     BrowserModule,
