@@ -10,12 +10,15 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { AuthInterceptor } from './login/auth.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { SeriesComponent } from './series/series.component';
 import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,8 @@ import { CharactersComponent } from './characters/characters.component';
     NavMenuComponent,
     SeriesComponent,
     HomeComponent,
-    CharactersComponent
+    CharactersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,13 @@ import { CharactersComponent } from './characters/characters.component';
     ReactiveFormsModule,
     MatInputModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
